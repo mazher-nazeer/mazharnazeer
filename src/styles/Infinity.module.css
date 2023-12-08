@@ -1,0 +1,95 @@
+
+.infinityPath {
+    --size: 70;
+    --speed: 1.25;
+    height: calc(var(--size) * 1px);
+    position: relative;
+    width: calc(var(--size) * 1px);
+    margin-left: -80px;
+}
+
+.infinityPath>div {
+    height: calc(var(--size) * 1px);
+    width: calc(var(--size) * 1px);
+    border-radius: 100%;
+    border: calc(var(--size) / 4 * 1px) solid rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 50px;
+    animation-duration: calc(var(--speed) * 1s);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-name: infinity-spin;
+    transform: translate(calc(var(--translate) * 1%), 0) translate(calc(var(--translate-2) * 1px), 0);
+}
+
+.infinityPath>div:before {
+    content: "";
+    height: calc(var(--size) / 4 * 1px);
+    width: calc(var(--size) / 4 * 1px);
+    border-radius: 100%;
+    background: #dedede;
+    position: absolute;
+    top: 50%;
+    animation: infinity-vanish calc(var(--speed) * 2s) infinite reverse steps(1);
+    transform: translate(calc(var(--translate-2) * 2px), calc(var(--translate) * 1%));
+}
+
+.infinityPath>div:nth-of-type(1) {
+    --translate: -50;
+    --translate-2: calc(var(--size) / 8);
+}
+
+.infinityPath>div:nth-of-type(1):before {
+    right: 0;
+}
+
+.infinityPath>div:nth-of-type(2) {
+    --translate: 50;
+    --translate-2: calc(var(--size) / 8 * -1);
+    animation-delay: calc(var(--speed) * 1s);
+    animation-direction: reverse;
+}
+
+.infinityPath>div:nth-of-type(2):before {
+    left: 0;
+    transform: translate(calc(var(--size) / 4 * -1px), -50%);
+    animation-direction: normal;
+}
+
+.dark .infinityPath>div {
+    border: calc(var(--size) / 4 * 1px) solid rgba(255, 255, 255, 0.5);
+
+}
+
+.dark .infinityPath>div:before {
+    background: #1b1b1b;
+
+}
+
+@media screen and (max-width: 767px) {
+    .infinityPath {
+        --size: 40 !important;
+
+    }    
+}
+
+@keyframes infinity-vanish {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes infinity-spin {
+    from {
+        transform: translate(calc(var(--translate) * 1%), 0) translate(calc(var(--translate-2) * 1px), 0) rotate(0deg);
+    }
+
+    to {
+        transform: translate(calc(var(--translate) * 1%), 0) translate(calc(var(--translate-2) * 1px), 0) rotate(360deg);
+    }
+}
