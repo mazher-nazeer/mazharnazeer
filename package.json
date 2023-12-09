@@ -2,12 +2,11 @@
   "name": "mazhar-nazeer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://itsmazharnazeer.com/",
+  "homepage": "https://itsmazharnazeer.com/",
   "scripts": {
-    "dev": "next dev",
+    "dev": "node server.js",
     "build": "next build",
-
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
