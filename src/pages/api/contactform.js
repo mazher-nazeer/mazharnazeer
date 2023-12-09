@@ -12,6 +12,7 @@ export default async function ContactAPI(req, res) {
 
     const transporter = nodemailer.createTransport({
         host: "smtp.gmail.com",
+        service: 'Gmail',
         port: 465,
         secure: true, // upgrade later with STARTTLS
         auth: {
