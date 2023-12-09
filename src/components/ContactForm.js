@@ -57,7 +57,7 @@ const ContactForm = () => {
 
 
 
-            const response = await fetch(process.env.NODE_ENV == 'production' ? 'http://itsmazharnazeer.com/api/contactform' :'http://localhost:3000/api/contactform', {
+            const response = await fetch(process.env.NODE_ENV == 'production' ? 'https://itsmazharnazeer.com/api/contactform' :'http://localhost:3000/api/contactform', {
 
                 method: "POST",
                 body: JSON.stringify(data),
