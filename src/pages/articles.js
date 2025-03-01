@@ -112,7 +112,7 @@ const articles = () => {
         <div>
 
             <Head>
-                <title>Mazhar Nazeer | Projects </title>
+                <title>Mazhar Nazeer | Articles </title>
                 <meta name="description" content="some description" />
 
             </Head>

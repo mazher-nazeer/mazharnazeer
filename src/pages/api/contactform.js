@@ -31,7 +31,7 @@ export default async function ContactAPI(req, res) {
             subject: `Contact form submission from ${name}`,
             html: `
             <h3>Name: ${name}</h3>
-            <h3>Emil: ${email}</h3>
+            <h3>Email: ${email}</h3>
             <h3>Contact: ${phone}</h3>
             <h3>Message: ${message}</h3>`
         })
